@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_corner_radius_redesign">4.0dip</dimen>
+    <dimen name="button_border_stroke">1.0dip</dimen>
+    <dimen name="row_height_small">48.0dip</dimen>
+    <dimen name="login_horizontal_margin">28.0dip</dimen>
+    <dimen name="logo_bottom_margin">25.0dip</dimen>
+    <dimen name="textbox_bottom_margin">15.0dip</dimen>
+    <dimen name="font_medium">14.0sp</dimen>
+    <dimen name="row_padding">16.0dip</dimen>
+    <dimen name="reg_text_field_height">48.0dip</dimen>
+    <dimen name="font_small">12.0sp</dimen>
+    <dimen name="forget_button_padding">15.0dip</dimen>
+    <dimen name="reg_margin_xsmall">8.0dip</dimen>
+    <dimen name="reg_button_height">48.0dip</dimen>
+    <dimen name="reg_margin_small">16.0dip</dimen>
+</resources>

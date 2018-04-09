@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login_component"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/login_horizontal_margin"
+    android:layout_marginRight="@dimen/login_horizontal_margin"
+    android:orientation="vertical">
+
+    <include layout="@layout/language_picker" />
+
+    <ImageView
+        android:id="@+id/login_landing_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/logo_bottom_margin"
+        android:tint="@color/grey_9"
+        android:src="@drawable/nux_dayone_landing_logo" />
+
+    <AutoCompleteTextView
+        android:id="@+id/login_username"
+        style="@style/RegEditTextStyle"
+        android:layout_marginBottom="@dimen/textbox_bottom_margin"
+        android:completionThreshold="1"
+        android:hint="Username" />
+
+    <EditText
+        android:id="@+id/password"
+        style="@style/RegEditTextStyle"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <CheckBox
+        android:id="@+id/show_password_checkbox"
+        style="@style/RegCheckBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/reg_margin_xsmall"
+        android:text="Show Password"
+        android:visibility="gone" />
+
+    <Button android:id="@+id/next_button" android:text="Log In" style="@style/RegProgressButtonStyle" />
+
+    <TextView
+        android:id="@+id/login_forgot_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="center"
+        android:paddingBottom="@dimen/forget_button_padding"
+        android:paddingTop="@dimen/forget_button_padding"
+        android:textColor="@color/grey_5"
+        android:textSize="@dimen/font_small" />
+
+
+    <include layout="@layout/reg_footer" />
+
+</LinearLayout>
