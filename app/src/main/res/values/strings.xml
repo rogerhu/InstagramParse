@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">InstagramParse</string>
     <string name="user_signup_message">"Don't have an account? &lt;b>Sign up.&lt;/b>"</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
