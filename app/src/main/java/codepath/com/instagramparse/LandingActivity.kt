@@ -47,13 +47,8 @@ class LandingActivity : AppCompatActivity() {
 
     fun selectDrawerItem(menuItem : MenuItem) {
         var fragmentClass: KClass<out Fragment>? = when (menuItem.itemId) {
-            R.id.action_home -> {
-                Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
-                null
-            }
-            R.id.action_camera -> {
-                CameraFragment::class
-            }
+            R.id.action_home -> FeedFragment::class
+            R.id.action_camera -> CameraFragment::class
             R.id.action_profile -> {
                 Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
                 null

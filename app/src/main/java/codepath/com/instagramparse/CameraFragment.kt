@@ -108,6 +108,7 @@ class CameraFragment : Fragment() {
         var post = Post()
         with(post) {
             media = ParseFile(photoFile)
+            description = caption.text.toString()
         }
         post.saveInBackground({
             Toast.makeText(context!!, "Saved", Toast.LENGTH_LONG).show()

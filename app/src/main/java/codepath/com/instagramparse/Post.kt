@@ -12,9 +12,16 @@ import com.parse.ParseObject
 class Post : ParseObject() {
 
     // https://kotlinlang.org/docs/reference/properties.html#getters-and-setters
-    var media : ParseFile?
-    get() = getParseFile("media")
-    set(file) {
-        put("media", file)
-    }
+    var media: ParseFile?
+        get() = getParseFile("media")
+        set(file) {
+            put("media", file)
+        }
+
+    var description: String?
+        get() = getString("caption")
+        set(file) {
+            put("caption", file)
+        }
+
 }
