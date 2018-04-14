@@ -1,13 +1,9 @@
 package codepath.com.instagramparse
 
-import android.content.Context
-import android.graphics.BitmapFactory
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import com.parse.ParseFile
 import kotlinx.android.synthetic.main.item_post.view.*
 
 class PostAdapter(private val mPosts: List<Post>): RecyclerView.Adapter<PostAdapter.ViewHolder>() {
@@ -25,7 +21,8 @@ class PostAdapter(private val mPosts: List<Post>): RecyclerView.Adapter<PostAdap
                     itemView.post_photo.setParseFile(media)
                     itemView.post_photo.loadInBackground()
                 }
-                itemView.post_caption.text = description
+                itemView.post_caption.text = caption
+                itemView.post_caption.text = ""
             }
         }
     }

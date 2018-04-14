@@ -38,15 +38,17 @@ class LandingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_landing)
 
         bottom_navigation.setOnNavigationItemSelectedListener({ menuItem ->
-            selectDrawerItem(menuItem)
+            selectDrawerItem(menuItem.itemId)
             true
         })
+        selectDrawerItem(R.id.action_home)
+        setSupportActionBar(toolbar)
     }
 
     // https://gist.github.com/rcgonzalezf/b1755891115abe44a96e77d3587dd824
 
-    fun selectDrawerItem(menuItem : MenuItem) {
-        var fragmentClass: KClass<out Fragment>? = when (menuItem.itemId) {
+    fun selectDrawerItem(menuId : Int) {
+        var fragmentClass: KClass<out Fragment>? = when (menuId) {
             R.id.action_home -> FeedFragment::class
             R.id.action_camera -> CameraFragment::class
             R.id.action_profile -> {

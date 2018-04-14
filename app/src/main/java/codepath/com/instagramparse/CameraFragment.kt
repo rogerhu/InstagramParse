@@ -1,9 +1,7 @@
 package codepath.com.instagramparse
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
@@ -14,15 +12,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import com.parse.ParseFile
 import kotlinx.android.synthetic.main.fragment_camera.*
 import java.io.File
 import android.graphics.BitmapFactory
-import android.graphics.Bitmap
-import android.opengl.Visibility
-import codepath.com.instagramparse.R.id.*
+import com.parse.Parse
+import com.parse.ParseUser
 
 
 /**
@@ -61,8 +57,8 @@ class CameraFragment : Fragment() {
     fun resetState() {
         take_picture.visibility = View.VISIBLE
         post_button.visibility = View.GONE
-        caption.visibility = View.GONE
-        caption.text.clear()
+        image_caption.visibility = View.GONE
+        image_caption.text.clear()
         imagePreview.setImageBitmap(null)
     }
     fun onLaunchCamera() {
@@ -108,7 +104,10 @@ class CameraFragment : Fragment() {
         var post = Post()
         with(post) {
             media = ParseFile(photoFile)
-            description = caption.text.toString()
+            caption = image_caption.text.toString()
+            author = ParseUser.getCurrentUser()
+            commentsCount = 0
+            likesCount = 0
         }
         post.saveInBackground({
             Toast.makeText(context!!, "Saved", Toast.LENGTH_LONG).show()
@@ -123,7 +122,7 @@ class CameraFragment : Fragment() {
                 val takenImage = BitmapFactory.decodeFile(photoFile?.absolutePath)
                 imagePreview.setImageBitmap(takenImage)
 
-                caption.visibility = View.VISIBLE
+                image_caption.visibility = View.VISIBLE
                 take_picture.visibility = View.GONE
                 post_button.visibility = View.VISIBLE
             } else { // Result was a failure

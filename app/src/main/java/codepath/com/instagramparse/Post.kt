@@ -3,6 +3,7 @@ package codepath.com.instagramparse
 import com.parse.ParseClassName
 import com.parse.ParseFile
 import com.parse.ParseObject
+import com.parse.ParseUser
 
 /**
  * Created by rhu on 4/8/18.
@@ -18,10 +19,28 @@ class Post : ParseObject() {
             put("media", file)
         }
 
-    var description: String?
+    var caption: String?
         get() = getString("caption")
         set(file) {
             put("caption", file)
+        }
+
+    var author: ParseUser?
+        get() = getParseUser("author")
+        set(author) {
+            put("author", author)
+        }
+
+    var likesCount: Int?
+        get() = getInt("likesCount")
+        set(likes) {
+            put("likesCount", likes)
+        }
+
+    var commentsCount: Int?
+        get() = getInt("commentsCount")
+        set(comments) {
+            put("comments", comments)
         }
 
 }
