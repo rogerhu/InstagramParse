@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:id="@+id/ufi_row" android:layout_width="fill_parent" android:layout_height="@dimen/explore_event_viewer_row_ufi_footer_height"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@+id/ufi_row_feed_button_like" android:layout_width="@dimen/feed_feedback_item_width" android:layout_height="@dimen/feed_feedback_item_height" android:layout_marginLeft="@dimen/feed_feedback_margin" android:src="@drawable/ufi_heart_icon" android:scaleType="center" />
+
+    <ImageView
+        android:id="@+id/ufi_row_feed_button_comment"
+        android:layout_width="@dimen/feed_feedback_item_width"
+        android:layout_height="@dimen/feed_feedback_item_height"
+        android:layout_toRightOf="@id/ufi_row_feed_button_like"
+        android:contentDescription="comment"
+        android:scaleType="center"
+        android:src="@drawable/ufi_comment" />
+
+    <ImageView android:id="@+id/ufi_row_feed_button_share" android:layout_width="@dimen/feed_feedback_item_width" android:layout_height="@dimen/feed_feedback_item_height" android:src="@drawable/direct" android:scaleType="center" android:layout_toRightOf="@id/ufi_row_feed_button_comment" android:contentDescription="share" />
+    <ImageView android:id="@+id/ufi_row_feed_button_save" android:visibility="gone" android:layout_width="@dimen/feed_feedback_item_width" android:layout_height="@dimen/feed_feedback_item_height" android:layout_marginRight="@dimen/feed_feedback_margin" android:src="@drawable/ufi_save_icon" android:scaleType="center" android:layout_alignParentRight="true" />
+</RelativeLayout>

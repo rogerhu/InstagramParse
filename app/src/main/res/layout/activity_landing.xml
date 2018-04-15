@@ -10,17 +10,45 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/white"
         android:fitsSystemWindows="true"
-        android:minHeight="?attr/actionBarSize"
+        android:minHeight="48.0dip"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetRight="8dp"
         app:layout_constraintBottom_toTopOf="@id/flContent"
         app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="@android:color/white"></android.support.v7.widget.Toolbar>
+        app:titleTextColor="@android:color/white">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="#000000"
+            android:src="@drawable/camera_shadow_fill"
+            android:layout_gravity="left"/>
+
+        <ImageView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="#000000"
+            android:src="@drawable/nav_logo_whiteout"
+            android:layout_gravity="center"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="#000000"
+            android:src="@drawable/nav_inbox_paper_plane"
+            android:layout_gravity="right"/>
+    </android.support.v7.widget.Toolbar>
 
     <FrameLayout
         android:id="@+id/flContent"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

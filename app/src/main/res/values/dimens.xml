@@ -14,4 +14,14 @@
     <dimen name="reg_margin_xsmall">8.0dip</dimen>
     <dimen name="reg_button_height">48.0dip</dimen>
     <dimen name="reg_margin_small">16.0dip</dimen>
+    <dimen name="feed_feedback_item_width">40.dip</dimen>
+    <dimen name="feed_feedback_item_height">44.dip</dimen>
+    <dimen name="feed_feedback_margin">6.0dip</dimen>
+    <dimen name="explore_event_viewer_row_ufi_footer_height">36.0dip</dimen>
+    <dimen name="explore_event_viewer_row_header_height">36.0dip</dimen>
+    <dimen name="explore_event_viewer_row_header_side_margin">12.0dip</dimen>
+    <dimen name="explore_event_viewer_username_font_size">14.0sp</dimen>
+    <dimen name="explore_event_viewer_row_header_tap_target_offset">32.0dip</dimen>
+    <dimen name="explore_event_viewer_profile_picture_size">20.dip</dimen>
+    <dimen name="feed_more_button_padding">22.0dip</dimen>
 </resources>

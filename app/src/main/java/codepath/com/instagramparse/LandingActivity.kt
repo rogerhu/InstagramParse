@@ -43,6 +43,7 @@ class LandingActivity : AppCompatActivity() {
         })
         selectDrawerItem(R.id.action_home)
         setSupportActionBar(toolbar)
+        getSupportActionBar()?.setDisplayShowTitleEnabled(false)
     }
 
     // https://gist.github.com/rcgonzalezf/b1755891115abe44a96e77d3587dd824
