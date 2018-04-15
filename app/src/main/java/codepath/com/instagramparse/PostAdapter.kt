@@ -4,6 +4,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import kotlinx.android.synthetic.main.immersive_viewer_row_footer.view.*
+import kotlinx.android.synthetic.main.immersive_viewer_row_header.view.*
 import kotlinx.android.synthetic.main.item_post.view.*
 
 class PostAdapter(private val mPosts: List<Post>): RecyclerView.Adapter<PostAdapter.ViewHolder>() {
@@ -18,9 +22,19 @@ class PostAdapter(private val mPosts: List<Post>): RecyclerView.Adapter<PostAdap
 
                 if (media != null) {
                     itemView.post_photo.visibility = View.VISIBLE
-                    itemView.post_photo.setParseFile(media)
-                    itemView.post_photo.loadInBackground()
+//                    itemView.post_photo.setParseFile(media)
+//                    itemView.post_photo.loadInBackground()
+
+                    Glide.with(view.context).load(media?.url).into(itemView.post_photo)
                 }
+
+                Glide.with(view.context)
+                        .load("https://instagram.fsnc1-1.fna.fbcdn.net/vp/d1933e703d5d82784a43157c8d02ff04/5B656952/t51.2885-19/s320x320/12918039_230227960666719_282379501_a.jpg")
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(itemView.row_feed_photo_profile_imageview)
+
+                itemView.ufi_row_feed_button_save.isSelected = true
+                itemView.row_feed_photo_profile_name.text = "beyonce"
                 itemView.post_caption.text = caption
                 itemView.post_caption.text = ""
             }
