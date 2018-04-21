@@ -29,7 +29,7 @@ import kotlin.reflect.KClass
 // bottom navigation view -> when
 // Kotlin return value
 // https://medium.com/@eduardo22i/parse-sdk-android-and-kotlin-bc4c55e95ba8
-
+// super.onActivityResult() for activity to handle it?
 
 class LandingActivity : AppCompatActivity() {
 
@@ -52,10 +52,8 @@ class LandingActivity : AppCompatActivity() {
         var fragmentClass: KClass<out Fragment>? = when (menuId) {
             R.id.action_home -> FeedFragment::class
             R.id.action_camera -> CameraFragment::class
-            R.id.action_profile -> {
-                Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
-                null
-            }
+            R.id.action_profile -> ProfileFragment::class
+
             else -> null
         }
 
