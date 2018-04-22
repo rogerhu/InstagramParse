@@ -40,7 +40,6 @@ class PostAdapter(private val mPosts: List<Post>): RecyclerView.Adapter<PostAdap
                 itemView.ufi_row_feed_button_save.isSelected = true
                 itemView.row_feed_photo_profile_name.text = ParseUser.getCurrentUser().username
                 itemView.post_caption.text = caption
-                itemView.post_caption.text = ""
             }
         }
     }

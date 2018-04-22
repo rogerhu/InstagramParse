@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.parse.ParseFile
 import com.parse.ParseQuery
 import com.parse.ParseUser
@@ -39,10 +40,16 @@ class FeedFragment : Fragment() {
         recyclerView.adapter = PostAdapter(mPosts)
         recyclerView.layoutManager = LinearLayoutManager(this.context)
 
-        query.findInBackground({posts : List<Post>, e ->
-            val postsSize = mPosts.size - 1
-            mPosts.addAll(posts)
-            recyclerView.adapter.notifyItemRangeInserted(postsSize, posts.size)
+        query.findInBackground({posts : List<Post>?, e ->
+
+            if (e != null) {
+                Toast.makeText(this@FeedFragment.context, "Error loading", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                val postsSize = mPosts.size - 1
+                mPosts.addAll(posts!!)
+                recyclerView.adapter.notifyItemRangeInserted(postsSize, posts.size)
+            }
         })
         return view
     }

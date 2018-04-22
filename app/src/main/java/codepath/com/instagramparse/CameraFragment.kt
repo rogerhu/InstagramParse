@@ -112,6 +112,7 @@ class CameraFragment : Fragment() {
         post.saveInBackground({
             Toast.makeText(context!!, "Saved", Toast.LENGTH_LONG).show()
             resetState()
+//            (activity as LandingActivity).selectDrawerItem(R.id.action_home )
         })
     }
 
