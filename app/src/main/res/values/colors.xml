@@ -10,10 +10,13 @@
     <color name="transparent">#00000000</color>
     <color name="grey_0">#fffafafa</color>
     <color name="grey_1">#ffefefef</color>
+    <color name="grey_2">#ffdbdbdb</color>
     <color name="grey_5">#ff999999</color>
+    <color name="grey_9">#ff262626</color>
     <color name="grey_5_30_transparent">#4d999999</color>
     <color name="grey_2_30_transparent">#4ddbdbdb</color>
     <color name="grey_9_30_transparent">#4d262626</color>
-    <color name="grey_2">#ffdbdbdb</color>
-    <color name="grey_9">#ff262626</color>
+    <color name="green_5">#ff70c050</color>
+    <color name="green_5_30_transparent">#fc70c050</color>
+    <color name="green_5_70_transparent">#b370c050</color>
 </resources>

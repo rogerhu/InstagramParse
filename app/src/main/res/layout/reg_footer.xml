@@ -2,7 +2,7 @@
 <merge
     xmlns:android="http://schemas.android.com/apk/res/android">
     <View android:id="@+id/horizontal_footer_divider" android:background="@color/grey_2" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-    <TextView android:textSize="@dimen/font_small" android:textColor="@color/grey_5" android:gravity="center" android:id="@+id/log_in_button" android:layout_width="fill_parent" android:layout_height="@dimen/row_height_small"/>
+    <TextView android:textSize="@dimen/font_small" android:textColor="@color/grey_5" android:gravity="center" android:id="@+id/signup_button" android:layout_width="fill_parent" android:layout_height="@dimen/row_height_small"/>
 </merge>
 
 

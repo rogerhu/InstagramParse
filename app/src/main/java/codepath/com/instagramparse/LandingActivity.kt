@@ -30,16 +30,20 @@ import kotlin.reflect.KClass
 // Kotlin return value
 // https://medium.com/@eduardo22i/parse-sdk-android-and-kotlin-bc4c55e95ba8
 // super.onActivityResult() for activity to handle it?
-
+// BottomNavigationView -> shift mode (https://readyandroid.wordpress.com/disable-bottomnavigationview-shift-mode/)
+// ParseFile upload
+// BottomNavigationView - set checked
 class LandingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing)
 
+        bottom_navigation.setTextVisibility(false)
         bottom_navigation.setOnNavigationItemSelectedListener({ menuItem ->
             selectDrawerItem(menuItem.itemId)
             true
+
         })
         selectDrawerItem(R.id.action_home)
         setSupportActionBar(toolbar)

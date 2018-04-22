@@ -39,4 +39,8 @@
         <item name="progressBarTint">@color/blue_5</item>
         <item name="android:textColor">@color/white</item>
     </style>
+    <style name="RegProgressButtonStyle.Green">
+        <item name="android:background">@drawable/reg_green_button_background</item>
+    </style>
+
 </resources>

@@ -3,12 +3,9 @@ package codepath.com.instagramparse
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Html
 import android.widget.Toast
 import com.parse.ParseUser
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_login.view.*
-import kotlinx.android.synthetic.main.reg_footer.*
 
 
 class LoginActivity : AppCompatActivity() {
@@ -16,7 +13,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        log_in_button.text = getString(R.string.user_signup_message).toSpanned()
+        //signup_button.text = getString(R.string.user_signup_message).toSpanned()
 
         val currentUser = ParseUser.getCurrentUser() // this will now be null
 
@@ -24,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
             launchActivity()
         }
 
-        log_in_button.setOnClickListener({
+        signup_button.setOnClickListener({
             val user = ParseUser()
             if (login_username.text.isEmpty() || password.text.isEmpty()) {
                 return@setOnClickListener
@@ -38,11 +35,14 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this@LoginActivity, "Error logging in", Toast.LENGTH_LONG).show()
 
                     }
+                    else {
+                        launchActivity()
+                    }
                 })
             }
         })
 
-        next_button.setOnClickListener({
+        login_button.setOnClickListener({
             ParseUser.logInInBackground(login_username.text.toString(), password.text.toString(), ({ user, e ->
                 if (user != null) {
                     launchActivity()

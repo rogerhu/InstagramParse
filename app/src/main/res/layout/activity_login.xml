@@ -40,7 +40,9 @@
         android:text="Show Password"
         android:visibility="gone" />
 
-    <Button android:id="@+id/next_button" android:text="Log In" style="@style/RegProgressButtonStyle" />
+    <Button android:id="@+id/login_button" android:text="Log In" style="@style/RegProgressButtonStyle" />
+    <Button android:id="@+id/signup_button" android:text="Sign Up" style="@style/RegProgressButtonStyle.Green" />
+
 
     <TextView
         android:id="@+id/login_forgot_button"
@@ -54,6 +56,6 @@
         android:textSize="@dimen/font_small" />
 
 
-    <include layout="@layout/reg_footer" />
+    <!--<include layout="@layout/reg_footer" />-->
 
 </LinearLayout>
