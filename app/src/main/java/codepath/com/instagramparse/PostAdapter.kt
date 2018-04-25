@@ -1,9 +1,13 @@
 package codepath.com.instagramparse
 
+import android.arch.lifecycle.ViewModelProviders
+import android.support.v7.recyclerview.extensions.ListAdapter
+import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import bolts.Task
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.parse.ParseUser
@@ -13,7 +17,9 @@ import kotlinx.android.synthetic.main.item_post.view.*
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 
-class PostAdapter(private val mPosts: List<Post>): RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+class PostAdapter: ListAdapter<Post, PostAdapter.ViewHolder>(PostDiffCallback()) {
+
+    private val mPosts: MutableList<Post> = ArrayList()
 
     // https://github.com/antoniolg/Kotlin-for-Android-Developers
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
@@ -50,6 +56,12 @@ class PostAdapter(private val mPosts: List<Post>): RecyclerView.Adapter<PostAdap
         return viewHolder
     }
 
+    fun addPost(post: Post) {
+        if(!mPosts.contains(post)) {
+            mPosts.add(post)
+            notifyItemInserted(mPosts.size)
+        }
+    }
     override fun getItemCount(): Int {
         return mPosts.count()
     }
@@ -58,5 +70,17 @@ class PostAdapter(private val mPosts: List<Post>): RecyclerView.Adapter<PostAdap
         val post = mPosts[position]
 
         holder.bindPost(post)
+    }
+}
+
+
+class PostDiffCallback : DiffUtil.ItemCallback<Post>() {
+    override fun areItemsTheSame(oldItem: Post?, newItem: Post?): Boolean {
+        return oldItem?.objectId == newItem?.objectId
+    }
+
+    override fun areContentsTheSame(oldItem: Post?, newItem: Post?): Boolean {
+        return oldItem == newItem
+
     }
 }
