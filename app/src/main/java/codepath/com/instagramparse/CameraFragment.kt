@@ -5,8 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.support.v4.app.Fragment
-import android.support.v4.content.FileProvider
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +15,8 @@ import com.parse.ParseFile
 import kotlinx.android.synthetic.main.fragment_camera.*
 import java.io.File
 import android.graphics.BitmapFactory
+import androidx.core.content.FileProvider
+import androidx.fragment.app.Fragment
 import com.parse.Parse
 import com.parse.ParseUser
 
@@ -115,8 +115,7 @@ class CameraFragment : Fragment() {
 //            (activity as LandingActivity).selectDrawerItem(R.id.action_home )
         })
     }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 // by this point we have the camera photo on disk

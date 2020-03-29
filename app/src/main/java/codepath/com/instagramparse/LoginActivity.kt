@@ -1,9 +1,9 @@
 package codepath.com.instagramparse
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.parse.ParseUser
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
                 setPassword(password.text.toString())
                 signUpInBackground({ e ->
                     if (e != null) {
-                        Toast.makeText(this@LoginActivity, "Error logging in", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@LoginActivity, "Error logging in: " + e.toString(), Toast.LENGTH_LONG).show()
 
                     }
                     else {

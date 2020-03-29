@@ -14,13 +14,14 @@ class ParseApplication : Application() {
 
         val builder = OkHttpClient.Builder()
         val httpLoggingInterceptor = HttpLoggingInterceptor()
-        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+        httpLoggingInterceptor.apply { HttpLoggingInterceptor.Level.BODY }
+
         builder.networkInterceptors().add(httpLoggingInterceptor)
 
         ParseObject.registerSubclass(Post::class.java)
         Parse.initialize(Parse.Configuration.Builder(this)
                 .applicationId("myAppId")
-                .clientBuilder(builder).
-                server("https://codepath-fbu-parse-test.herokuapp.com/parse").build())
+                .clientBuilder(builder)
+                .server("https://codepath-fbu-parse-test.herokuapp.com/parse").build())
     }
 }

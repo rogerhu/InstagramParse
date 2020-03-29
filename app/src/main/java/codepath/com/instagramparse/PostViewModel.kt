@@ -1,9 +1,7 @@
 package codepath.com.instagramparse
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
 import android.widget.Toast
+import androidx.lifecycle.ViewModel
 import com.parse.ParseQuery
 
 // https://www.youtube.com/watch?v=MfHsPGQ6bgE

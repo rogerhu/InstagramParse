@@ -1,16 +1,16 @@
 package codepath.com.instagramparse
 
-import android.support.design.internal.BottomNavigationMenuView
 import java.lang.reflect.AccessibleObject.setAccessible
-import android.support.design.widget.BottomNavigationView
 import android.view.Gravity
 import android.R.attr.gravity
 import android.annotation.SuppressLint
 import android.content.Context
 import android.widget.FrameLayout
-import android.support.v7.widget.AppCompatImageView
-import android.support.design.internal.BottomNavigationItemView
 import android.util.AttributeSet
+import androidx.appcompat.widget.AppCompatImageView
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MyBottomNavigationView : BottomNavigationView {
@@ -54,7 +54,7 @@ class MyBottomNavigationView : BottomNavigationView {
                 val params = icon.layoutParams as FrameLayout.LayoutParams
                 params.gravity = Gravity.CENTER
 
-                menuItemView.setShiftingMode(true)
+//                menuItemView.setShiftingMode(true)
             }
         }
     }

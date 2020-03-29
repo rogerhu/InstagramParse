@@ -1,12 +1,11 @@
 package codepath.com.instagramparse
 
-import android.arch.lifecycle.ViewModelProviders
-import android.support.v7.recyclerview.extensions.ListAdapter
-import android.support.v7.util.DiffUtil
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import bolts.Task
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -34,7 +33,7 @@ class PostAdapter: ListAdapter<Post, PostAdapter.ViewHolder>(PostDiffCallback())
                     itemView.post_photo.setParseFile(media)
                     itemView.post_photo.loadInBackground()
 
-//                    Glide.with(view.context).load(media?.url).into(itemView.post_photo)
+                    Glide.with(view.context).load(media?.url).into(itemView.post_photo)
 //                      Glide.with(view.context).load(images[adapterPosition % images.size]).into(itemView.post_photo)
 
                 }
@@ -75,11 +74,11 @@ class PostAdapter: ListAdapter<Post, PostAdapter.ViewHolder>(PostDiffCallback())
 
 
 class PostDiffCallback : DiffUtil.ItemCallback<Post>() {
-    override fun areItemsTheSame(oldItem: Post?, newItem: Post?): Boolean {
-        return oldItem?.objectId == newItem?.objectId
+    override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean {
+        return oldItem.objectId == newItem.objectId
     }
 
-    override fun areContentsTheSame(oldItem: Post?, newItem: Post?): Boolean {
+    override fun areContentsTheSame(oldItem: Post, newItem: Post): Boolean {
         return oldItem == newItem
 
     }
